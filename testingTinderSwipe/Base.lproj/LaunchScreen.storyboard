@@ -13,10 +13,19 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleAspectFit" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.30588235289999999" blue="0.43529411759999997" alpha="0.85788952460000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fabacus" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-iv-uaJ">
+                                <rect key="frame" x="123" y="269" width="128" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hLl-iv-uaJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2dk-0u-BQh"/>
+                            <constraint firstItem="hLl-iv-uaJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ha7-1d-HqY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -25,4 +34,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Fabacus" width="128" height="128"/>
+    </resources>
 </document>

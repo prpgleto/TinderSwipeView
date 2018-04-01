@@ -13,6 +13,7 @@ let SCALE_MAX : CGFloat = 0.93
 let ROTATION_STRENGTH = UIScreen.main.bounds.size.width
 
 import UIKit
+import Kingfisher
 
 protocol TinderCardDelegate: NSObjectProtocol {
     func cardSwipedLeft(_ card: TinderCard)
@@ -35,6 +36,11 @@ class TinderCard: UIView {
     public init(frame: CGRect, value: String) {
         super.init(frame: frame)
         setupView(at: value)
+    }
+    
+    public init(frame: CGRect, project: Projects) {
+        super.init(frame: frame)
+        setupView(at: project)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -71,6 +77,51 @@ class TinderCard: UIView {
         let labelText = UILabel(frame:CGRect(x: 90, y: frame.size.height - 80, width: frame.size.width - 100, height: 60))
         let attributedText = NSMutableAttributedString(string: NAMES[Int(arc4random_uniform(UInt32(NAMES.count)))], attributes: [.foregroundColor: UIColor.white,.font:UIFont.boldSystemFont(ofSize: 25)])
         attributedText.append(NSAttributedString(string: "\n\(value) mins", attributes: [.foregroundColor: UIColor.white,.font:UIFont.systemFont(ofSize: 18)]))
+        labelText.attributedText = attributedText
+        labelText.numberOfLines = 2
+        addSubview(labelText)
+        
+        imageViewStatus = UIImageView(frame: CGRect(x: (frame.size.width / 2) - 37.5, y: 25, width: 75, height: 75))
+        imageViewStatus.alpha = 0
+        addSubview(imageViewStatus)
+        
+        overLayImage = UIImageView(frame:bounds)
+        overLayImage.alpha = 0
+        addSubview(overLayImage)
+    }
+    
+    func setupView(at project:Projects) {
+        
+        layer.cornerRadius = 10
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: 0.5, height: 3)
+        layer.shadowColor = UIColor.darkGray.cgColor
+        clipsToBounds = true
+        originalPoint = center
+        isUserInteractionEnabled = false
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.beingDragged))
+        addGestureRecognizer(panGestureRecognizer)
+        
+        let backGroundImageView = UIImageView(frame:bounds)
+        //backGroundImageView.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
+        backGroundImageView.kf.setImage(with: URL(string: project.productImageUrl!))
+        backGroundImageView.contentMode = .scaleAspectFill
+        backGroundImageView.clipsToBounds = true;
+        addSubview(backGroundImageView)
+        
+        let profileImageView = UIImageView(frame:CGRect(x: 20, y: frame.size.height - 80, width: 60, height: 60))
+        //profileImageView.image = UIImage(named:"prof")
+        profileImageView.kf.setImage(with: URL(string: project.userUrl!))
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.layer.cornerRadius = 30
+        profileImageView.clipsToBounds = true
+        addSubview(profileImageView)
+        
+        let labelText = UILabel(frame:CGRect(x: 90, y: frame.size.height - 80, width: frame.size.width - 100, height: 60))
+        let attributedText = NSMutableAttributedString(string:project.name!, attributes: [.foregroundColor: UIColor.white,.font:UIFont.boldSystemFont(ofSize: 25)])
+        attributedText.append(NSAttributedString(string: "\n\(project.projectName!)", attributes: [.foregroundColor: UIColor.lightGray,.font:UIFont.systemFont(ofSize: 18)]))
         labelText.attributedText = attributedText
         labelText.numberOfLines = 2
         addSubview(labelText)

@@ -29,9 +29,42 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
-        loadCards()
+        //loadCards()
+        loadFakeProductCards(true)
     }
     
+    
+    func loadFakeProductCards(_ withDummy:Bool) {
+        
+        let projectsArray:[Projects] = FakeDataGenerator.generateFakeData()
+        print("projects count = \(projectsArray.count)")
+        
+        if projectsArray.count > 0 {
+            let num_currentLoadedCardsArrayCap = (valueArray.count > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : projectsArray.count
+            for (i,value) in projectsArray.enumerated() {
+                //let newCard = createDraggableViewWithData(at: i,value: value)
+                let newCard = createDraggableViewWithProjectData(at: i,project: value)
+                allCardsArray.append(newCard)
+                if i < num_currentLoadedCardsArrayCap {
+                    currentLoadedCardsArray.append(newCard)
+                }
+            }
+            
+            for (i,_) in currentLoadedCardsArray.enumerated() {
+                if i > 0 {
+                    viewTinderBackGround.insertSubview(currentLoadedCardsArray[i], belowSubview: currentLoadedCardsArray[i - 1])
+                }
+                else {
+                    viewTinderBackGround.addSubview(currentLoadedCardsArray[i])
+                }
+                currentIndex += 1
+            }
+            animateCardAfterSwiping()
+            if(withDummy) {
+                self.perform(#selector(createDummyCard), with: nil, afterDelay: 1.0)
+            }
+        }
+    }
     
     func loadCards() {
         
@@ -71,6 +104,15 @@ class ViewController: UIViewController {
     func createDraggableViewWithData(at index: Int , value :String) -> TinderCard {
         
         let card = TinderCard(frame: CGRect(x: 10, y: 0, width: viewTinderBackGround.frame.size.width - 20 , height: viewTinderBackGround.frame.size.height - 40) ,value : value)
+        card.delegate = self
+        card.intex = index
+        return card
+    }
+    
+    func createDraggableViewWithProjectData(at index: Int , project :Projects) -> TinderCard {
+        
+        let card = TinderCard(frame: CGRect(x: 10, y: 0, width: viewTinderBackGround.frame.size.width - 20 , height: viewTinderBackGround.frame.size.height - 40), project: project)
+        
         card.delegate = self
         card.intex = index
         return card
@@ -152,6 +194,11 @@ class ViewController: UIViewController {
             self.isMakeUndo = false
         }
     }
+    
+    @IBAction func loadMoreProducts(_ sender: UIButton) {
+        loadFakeProductCards(false)
+    }
+    
 }
 
 extension ViewController : TinderCardDelegate{
