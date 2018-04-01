@@ -61,6 +61,9 @@ class TinderCard: UIView {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.beingDragged))
         addGestureRecognizer(panGestureRecognizer)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped))
+        addGestureRecognizer(tapGestureRecognizer)
+        
         let backGroundImageView = UIImageView(frame:bounds)
         backGroundImageView.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         backGroundImageView.contentMode = .scaleAspectFill
@@ -103,6 +106,9 @@ class TinderCard: UIView {
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.beingDragged))
         addGestureRecognizer(panGestureRecognizer)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped))
+        addGestureRecognizer(tapGestureRecognizer)
         
         let backGroundImageView = UIImageView(frame:bounds)
         //backGroundImageView.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
@@ -195,6 +201,10 @@ class TinderCard: UIView {
         }
     }
     
+    @objc func cardTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+        print("Card tapped \(intex)")
+    }
+    
     func rightAction() {
         
         let finishPoint = CGPoint(x: frame.size.width*2, y: 2 * yFromCenter + originalPoint.y)
@@ -278,6 +288,8 @@ class TinderCard: UIView {
         
         print("WATCHOUT UNDO ACTION")
     }
+    
+    
     
     func shakeCard(){
         

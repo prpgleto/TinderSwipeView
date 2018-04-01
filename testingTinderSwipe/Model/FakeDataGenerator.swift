@@ -38,7 +38,7 @@ public class FakeDataGenerator {
         let p8:Projects = Projects(name: "Angela West", uerURL: "https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg", productImage: "https://static1.nordic.pictures/4320511-thickbox_default/marvel-avenger-toy-figure-black-widow.jpg", projectName:"Avengers")
         projectsList.append(p8)
         
-        let p9:Projects = Projects(name: "Angela West", uerURL: "https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg", productImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwTD8E1vO2Y2mXfFyCfM5dY4p9GRIiiwjEDFLrv-7XmUJEIRjN", projectName:"Avengers")
+        let p9:Projects = Projects(name: "Angela West", uerURL: "https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg", productImage: "http://www.mwctoys.com/images1/review_capam1_4.jpg", projectName:"Avengers")
         projectsList.append(p9)
         
         let p10:Projects = Projects(name: "Angela West", uerURL: "https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg", productImage: "https://www.bleedingcool.com/wp-content/uploads/2018/02/IMG_2840-600x800.jpg", projectName:"Avengers")
