@@ -10,6 +10,7 @@
 		03DEC3E847BDD49E093188C0 /* Pods_testingTinderSwipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6666F44D7EC1B827DE8327B0 /* Pods_testingTinderSwipe.framework */; };
 		3A448D20206F96CF003B1BF2 /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448D1F206F96CF003B1BF2 /* Projects.swift */; };
 		3A448D22206F98D6003B1BF2 /* FakeDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448D21206F98D6003B1BF2 /* FakeDataGenerator.swift */; };
+		3AA898702073946300C30B2E /* DeviceTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8986F2073946300C30B2E /* DeviceTarget.swift */; };
 		E10A09362014A76700A92931 /* Screen Shot.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A09352014A76700A92931 /* Screen Shot.png */; };
 		E1B2075B2014956500E0A3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B2075A2014956400E0A3A2 /* Assets.xcassets */; };
 		E1B3FCA01FBDA0FD0038ADF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3FC9F1FBDA0FD0038ADF9 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		3A448D1F206F96CF003B1BF2 /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
 		3A448D21206F98D6003B1BF2 /* FakeDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataGenerator.swift; sourceTree = "<group>"; };
+		3AA8986F2073946300C30B2E /* DeviceTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTarget.swift; sourceTree = "<group>"; };
 		6666F44D7EC1B827DE8327B0 /* Pods_testingTinderSwipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testingTinderSwipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5199C4809F50FFD9F2745BA /* Pods-testingTinderSwipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testingTinderSwipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testingTinderSwipe/Pods-testingTinderSwipe.debug.xcconfig"; sourceTree = "<group>"; };
 		DF1FBD6F974CB30A0D6658AB /* Pods-testingTinderSwipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testingTinderSwipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-testingTinderSwipe/Pods-testingTinderSwipe.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				E1B3FC9F1FBDA0FD0038ADF9 /* AppDelegate.swift */,
 				E1B3FCA11FBDA0FD0038ADF9 /* ViewController.swift */,
 				E1B3FCB31FBDA13D0038ADF9 /* TinderCard.swift */,
+				3AA8986F2073946300C30B2E /* DeviceTarget.swift */,
 				E1B2075A2014956400E0A3A2 /* Assets.xcassets */,
 				E1B3FCA31FBDA0FD0038ADF9 /* Main.storyboard */,
 				E1B3FCA81FBDA0FD0038ADF9 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 				E1B3FCA01FBDA0FD0038ADF9 /* AppDelegate.swift in Sources */,
 				E1B3FCB41FBDA13D0038ADF9 /* TinderCard.swift in Sources */,
 				3A448D22206F98D6003B1BF2 /* FakeDataGenerator.swift in Sources */,
+				3AA898702073946300C30B2E /* DeviceTarget.swift in Sources */,
 				3A448D20206F96CF003B1BF2 /* Projects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

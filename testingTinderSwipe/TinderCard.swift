@@ -103,6 +103,9 @@ class TinderCard: UIView {
         clipsToBounds = true
         originalPoint = center
         isUserInteractionEnabled = false
+        self.backgroundColor = UIColor.white
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.black.cgColor
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.beingDragged))
         addGestureRecognizer(panGestureRecognizer)
@@ -113,7 +116,7 @@ class TinderCard: UIView {
         let backGroundImageView = UIImageView(frame:bounds)
         //backGroundImageView.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         backGroundImageView.kf.setImage(with: URL(string: project.productImageUrl!))
-        backGroundImageView.contentMode = .scaleAspectFill
+        backGroundImageView.contentMode = .scaleAspectFit
         backGroundImageView.clipsToBounds = true;
         addSubview(backGroundImageView)
         

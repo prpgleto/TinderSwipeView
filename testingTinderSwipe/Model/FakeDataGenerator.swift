@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public class FakeDataGenerator {
     
     static func generateFakeData()->[Projects]{
@@ -20,7 +19,7 @@ public class FakeDataGenerator {
         let p2:Projects = Projects(name: "Angela West", uerURL: "https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg", productImage: "http://news.toyark.com/wp-content/uploads/sites/4/2014/02/AVENGERS-3.75Inch-HAWKEYE-A7088-In-Pack.jpg", projectName:"Avengers")
         projectsList.append(p2)
         
-        let p3:Projects = Projects(name: "Mark North", uerURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpKwDji4mANkqkGncYeD8osJaScTp_SnBSKeUdVpJS3agulaJNUw", productImage: "https://www.maybang.com/v/vspfiles/photos/HOT-12-10107-2.jpg", projectName:"Avengers")
+        let p3:Projects = Projects(name: "Mark North", uerURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpKwDji4mANkqkGncYeD8osJaScTp_SnBSKeUdVpJS3agulaJNUw", productImage: "http://images.goodsmile.info/cgm/images/product/20140430/4408/28851/large/f0b80ce09854e61b6a50bd8d8a6f9f34.jpg", projectName:"Avengers")
         projectsList.append(p3)
         
         let p4:Projects = Projects(name: "Jane Kim", uerURL: "https://www.attractivepartners.co.uk/wp-content/uploads/2017/06/profile.jpg", productImage: "https://images-na.ssl-images-amazon.com/images/I/91vGMg7UV3L._SY679_.jpg", projectName:"Avengers")
